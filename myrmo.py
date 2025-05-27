@@ -165,7 +165,7 @@ with SB(uc=True, test=True) as sb:
     timp = random.randint(25,36)
     start_time = time.time()
     duration = timp * 60
-    while time.time() - start_time < duration:
+    if time.time() - start_time < duration:
         if testkick():
             channel = "brutalles"
             url = f'https://kick.com/{channel}'
@@ -222,7 +222,7 @@ with SB(uc=True, test=True) as sb:
                 else:
                     break
             sb.quit_extra_driver()
-        if not testtw() and not testkick() and time.time() - start_time < duration:
+        if not testtw() and not testkick() and time.time() - start_time < duration and False:
             rnd = random.randint(1,600)
             sb.sleep(rnd)
             # driver2 = sb.get_new_driver(undetectable=True, proxy="socks5://127.0.0.1:1081")
