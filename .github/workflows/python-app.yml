@@ -48,7 +48,7 @@ jobs:
         python -m pip install --upgrade pip
         pip install --upgrade pip
         pip install --upgrade wheel
-        pip install--upgrade seleniumbase
+        pip install --upgrade seleniumbase
         # pip install -r requirements.txt
         pip install --upgrade pyautogui
         pip install --upgrade python-xlib
@@ -98,4 +98,8 @@ jobs:
         warp-cli --accept-tos registration new
     - name: Run python test.py --debug
       run: |
-        python myrmo.py --debug --chrome --xvfb --screenshot
+        python pety.py --debug --chrome --xvfb --screenshot
+    - uses: actions/upload-artifact@v4
+      with:
+        name: screenshot
+        path: latest_logs
