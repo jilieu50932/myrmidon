@@ -188,7 +188,7 @@ with SB(uc=True, test=True) as sb:
                 driver2.uc_click('button:contains("Accept")', reconnect_time=4)
             if driver2.is_element_present('button:contains("I am 18+")'):
                 driver2.uc_click('button:contains("I am 18+")', reconnect_time=4)
-            while testkick() and time.time() - start_time < duration:
+            while testkick():
                 if testkick():
                     sb.sleep(120)
                 else:
@@ -216,7 +216,7 @@ with SB(uc=True, test=True) as sb:
             if driver2.is_element_present('button:contains("Accept")'):
                 driver2.uc_click('button:contains("Accept")', reconnect_time=4)
             sb.sleep(5)
-            while testtw() and time.time() - start_time < duration:
+            while testtw():
                 if testtw():
                     sb.sleep(120)
                 else:
